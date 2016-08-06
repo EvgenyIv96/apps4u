@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EIGroupListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    EIGroupListViewController* vc = [[EIGroupListViewController alloc] init];
+    
+    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    self.window.rootViewController = nc;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
